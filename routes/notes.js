@@ -5,7 +5,7 @@ const util = require("util");
 
 notes.get("/", (req, res) => {
   util
-    .promisify(fs.readFile("db/db.json"))
+    .promisify(fs.readFile)("./db/db.json")
     .then((data) => res.json(JSON.parse(data)))
     .catch((err) => {
       console.error(err);
@@ -22,21 +22,25 @@ notes.post("/", (req, res) => {
       text,
       id: uuidv4(),
     };
-    fs.readFile("db/db.json", "utf8", (err, data) => {
+    fs.readFile("./db/db.json", "utf8", (err, data) => {
       if (err) {
         console.error(err);
       } else {
         const parsedData = JSON.parse(data);
         parsedData.push(newNote);
-        fs.writeFile("db/db.json", JSON.stringify(parsedData, null, 4), (err) => {
-        if (err) {
-            console.error(err);
-            res.status(500).json({ error: "Error writing data file." });
-          } else {
-            console.info(`\nData written to db/db.json`);
-            res.status(201).json(newNote);
+        fs.writeFile(
+          "./db/db.json",
+          JSON.stringify(parsedData, null, 4),
+          (err) => {
+            if (err) {
+              console.error(err);
+              res.status(500).json({ error: "Error writing data file." });
+            } else {
+              console.info(`\nData written to db/db.json`);
+              res.status(201).json(newNote);
+            }
           }
-      });
+        );
       }
     });
   }
