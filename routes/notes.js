@@ -1,8 +1,9 @@
+// dependencies
 const notes = require("express").Router();
 const { v4: uuidv4 } = require("uuid");
 const fs = require("fs");
 const util = require("util");
-
+// GET method for existing notes
 notes.get("/", (req, res) => {
   util
     .promisify(fs.readFile)("./db/db.json")
@@ -12,7 +13,7 @@ notes.get("/", (req, res) => {
       res.status(500).json({ error: "Error reading notes." });
     });
 });
-
+// POST method for newly created notes
 notes.post("/", (req, res) => {
   const { title, text } = req.body;
 
@@ -45,7 +46,7 @@ notes.post("/", (req, res) => {
     });
   }
 });
-
+// DELETE method to remove notes
 notes.delete("/:id", (req, res) => {
     const noteId = req.params.id;
     util.promisify(fs.readFile)("./db/db.json")
