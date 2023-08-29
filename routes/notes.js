@@ -46,4 +46,21 @@ notes.post("/", (req, res) => {
   }
 });
 
+notes.delete("/:id", (req, res) => {
+    const noteId = req.params.id;
+    util.promisify(fs.readFile)("./db/db.json")
+    .then((data) => {
+        const parsedData = JSON.parse(data);
+        const newData = parsedData.filter((note) => note.id !== noteId);
+        return util.promisify(fs.writeFile)("./db/db.json", JSON.stringify(newData, null, 4));
+    })
+    .then(() => {
+        console.info(`Note with ID ${noteId} deleted`);
+        res.status(204).send();
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).json({ error: "Error deleting note." });
+      });
+})
 module.exports = notes;

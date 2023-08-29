@@ -1,12 +1,10 @@
-# Note Taker Starter Code
+# Express.js Note Taker
 
-## User Story
+## Description
 
 AS A small business owner
 I WANT to be able to write and save notes
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
-
-## Acceptance Criteria
 
 GIVEN a note-taking application
 WHEN I open the Note Taker
@@ -27,6 +25,24 @@ THEN that note appears in the right-hand column X
 WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column X
 
+## Table of Contents
+
+- [Installation](#installation)
+
+- [Usage](#usage)
+
+- [Questions](#questions)
+
+## Installation
+
+## Usage
+
+## Questions
+
+Regarding any questions please check out my Github profile [JakeHowdeshell](https://github.com/JakeHowdeshell/node.js-readme-generator/tree/main).
+
+Or send me an [email](mailto:Jakehowdy@gmail.com).
+
 ## Grading Requirements
 
 This Challenge is graded based on the following criteria:
@@ -38,12 +54,12 @@ Application front end must connect to an Express.js back end. X
 
 Application back end must store notes with unique IDs in a JSON file. X
 
-Application must be deployed to Heroku.
+Application must be deployed to Heroku. X
 
 ### Deployment: 36%
-Application deployed at live URL.
+Application deployed at live URL. X
 
-Application loads with no errors.
+Application loads with no errors. X
 
 Application GitHub URL submitted.
 
