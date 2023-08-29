@@ -1,6 +1,21 @@
 [
     {
-        "title":"Test Title",
-        "text":"Test text"
+        "title": "Test Title",
+        "text": "Test text"
+    },
+    {
+        "title": "Take out trash",
+        "text": "take it out today",
+        "id": "48b90f19-5b03-41d2-b40c-7675e743cf62"
+    },
+    {
+        "title": "Do the dishes",
+        "text": "make sure the dishes are washed",
+        "id": "5ae72e3e-fa0d-4b4d-8e19-22b5178bc2a0"
+    },
+    {
+        "title": "Complete Homework",
+        "text": "Make sure to complete your coding homework",
+        "id": "7fb99b40-d1ee-4fd0-bb3e-c7efb33d7e2f"
     }
 ]
